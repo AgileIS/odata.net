@@ -25,7 +25,7 @@ namespace Microsoft.OData.Core.UriParser.Parsers
     /// <summary>
     /// Parser which consumes the query expression ($filter, $orderby) and produces the lexical object model.
     /// </summary>
-    internal sealed class UriQueryExpressionParser
+    public sealed class UriQueryExpressionParser
     {
         /// <summary>
         /// The maximum number of recursion nesting allowed.
@@ -65,7 +65,7 @@ namespace Microsoft.OData.Core.UriParser.Parsers
         /// </summary>
         /// <param name="maxDepth">The maximum depth of each part of the query - a recursion limit.</param>
         /// <param name="enableCaseInsensitiveBuiltinIdentifier">Whether to allow case insensitive for builtin identifier.</param>
-        internal UriQueryExpressionParser(int maxDepth, bool enableCaseInsensitiveBuiltinIdentifier = false)
+        public UriQueryExpressionParser(int maxDepth, bool enableCaseInsensitiveBuiltinIdentifier = false)
         {
             Debug.Assert(maxDepth >= 0, "maxDepth >= 0");
 
@@ -196,7 +196,7 @@ namespace Microsoft.OData.Core.UriParser.Parsers
         /// </summary>
         /// <param name="filter">The $filter expression string to parse.</param>
         /// <returns>The lexical token representing the filter.</returns>
-        internal QueryToken ParseFilter(string filter)
+        public QueryToken ParseFilter(string filter)
         {
             return this.ParseExpressionText(filter);
         }
@@ -411,7 +411,7 @@ namespace Microsoft.OData.Core.UriParser.Parsers
         /// </summary>
         /// <param name="orderBy">The $orderby expression string to parse.</param>
         /// <returns>The enumeraion of lexical tokens representing order by tokens.</returns>
-        internal IEnumerable<OrderByToken> ParseOrderBy(string orderBy)
+        public IEnumerable<OrderByToken> ParseOrderBy(string orderBy)
         {
             Debug.Assert(orderBy != null, "orderBy != null");
 
